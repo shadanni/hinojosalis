@@ -1,65 +1,113 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+</head>
+<body>
+  <header id="cabeceralogo"> 
+	<div> 
+	<center>
+	  <h1>Recomendaciones para viajar.</h1> 
+	  </center>
+	</div> 
+  </header> 
+  <center>
+  <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/7.9.3/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/7.9.3/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.9.3/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.9.3/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.9.3/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+ 
+  </center>
+   <main> 
+	<div> 
+	  <section id="articulosprincipales"> 
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+	  <br>
+<div class="alinear">
+	<form action="javascript:;">
+  <center>
+  <table border="2">
+  <tr>
+	  <th>Lugares a visitar de algunos estados</th>
+  </tr>
+  <tr>
+	  <td>Selecciona el estado:
+		  <select name="lol" id="vis">
+			  <option value="1"></option>
+			  <option value="2">Guanajuato</option>
+			  <option value="3">Jalisco</option>
+			  <option value="4">Michoacan</option>
+			  <option value="5">Chiapas</option>
+			  <option value="6">Zacatecas</option>
+			  <option value="7">Morelos</option>
+			  <option value="8">Tamaulipas</option>
+			  <option value="9">Puebla</option>
+			  <option value="10">Veracruz</option>
+			  <option value="11">Queretaro</option>
+			  <option value="12">Oaxaca</option>
+		  </select>
+		  <td> Ingresa tu edad:<input type="number" name="numero" value="18" min="10" max="100" id="vis1">
+			
+		  <td><input type="submit" value="Enviar" ></td>
+	  </tr>
+	  </table>
+	  </center>
+	  </form>
+</div>
+<script>
+"use sctrict";
+var res = document.getElementById("vis");
+var respuesta2 = document.getElementById("vis1");
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+document.addEventListener("submit",recomendaciones);
 
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
-</html>
+function recomendaciones(){
+
+  var estado = res.value;
+  var edad = respuesta2.value;
+  
+  if(estado == "2" && edad >=18 && edad < 60){
+
+	  alert("Recomendamos que visite: º El callejon del Besoº en guanajuato para que la pase muy bien ");
+
+  }else if(estado =="3"  && edad >=18 && edad < 60){
+
+	  alert("Recomendamos que visite : º San Pedro Tlaquepaque º en Jalisco para que la pase muy bien");
+
+  }else if(estado =="4" && edad >=18 && edad < 60){
+
+	  alert("Recomendamos que visite : ºSanta Clara del Cobreº en Michoacan para que la pase muy bien");
+
+  }else if(estado =="5"  && edad >=18 && edad < 60){
+	  alert("Recomendamos que visite : º San Cristobal de las cosas y Cañon del sufrimientoº en chiapas para que la pase muy bien");
+  }else if(estado =="6" && edad >=18 && edad < 60){
+	  alert("Recomendamos que visite :º Sombrerete y Jerez de Garcia Salinasº en zacatecas para que la pase muy bien");
+  }else if(estado =="7"  && edad >=18 && edad < 60){
+		  alert("Recomendamos que visite: º Cuernavaca, Tepoztlan, Xochicalco y Tlayacapanº en morelos  para que la pase muy bien");
+  }else if(estado =="8"  && edad >=18 && edad < 60){
+	  alert("Recomendamos que visite: º Tampico, Reynosa y Nuevo Laredo º en tamaulipas para que la pase muy bien");
+  }else if(estado =="9"  && edad >=18 && edad < 60){
+	  alert("Recomendamos que visite: º Atlixco y Pueblo de Zaragoza ºen puebla para que la pase muy bien");
+  }else if(estado =="10"  && edad >=18 && edad < 60){
+	  alert("Recomendamos que visite : º San Juan de Ulua,Acuario de Veracruz,Museo Naval de Mexico y  Zocalo de Veracruz º  para que la pase muy bien");
+  }else if(estado =="11"  && edad >=18 && edad < 60){
+	  alert("Recomendamos que visite : ºJardin Zenea, Acueducto de Queretaro,Plaza de Armas Queretaro y El cerrito º en queretaro para que la pase muy bien");
+ }else if(estado =="12"  && edad >=18 && edad < 60){
+	  alert("Recomendamos que visite :º Puerto Escondido, Mazunto, Playa Zipolite y Mitla º en oaxaca para que la pase muy bien");
+  }else {
+	alert("Eres menor de edad y no puedes viajar si no es acompañado de un adulto.");
+
+  }
+}
+</script>
+	<body>
+	<footer>
+				<br>
+				<br>
+				<br>
+				<br>
+				
+					<address>Estado de Mexico</address>
+					<small>&copy; Derechos Reservados 2020  Hinojosa Sanchez Shadanni Lissette</small>
+				
+	</footer>
+<html>
+
+
+
